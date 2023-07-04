@@ -51,101 +51,99 @@ class Cliente extends ActiveRecord
     //     return self::$alertas;
     // }	
 
-    public function validarDatos()
-    {
-        // if(!$this->CE_TIPO){
-        //     self::$alertas['error'][] = "El tipo de cliente es obligatorio";
-        // }
+    // public function validarDatos()
+    // {
+    //     if(!$this->CE_TIPO){
+    //         self::$alertas['error'][] = "El tipo de cliente es obligatorio";
+    //     }
 
-        if(!$this->CE_NOMBRE){
-            self::$alertas['error'][] = "El nombre del cliente es obligatorio";
-        }
+    //     if(!$this->CE_NOMBRE){
+    //         self::$alertas['error'][] = "El nombre del cliente es obligatorio";
+    //     }
 
-        if(!$this->CE_APELLIDO){
-            self::$alertas['error'][] = "El apellido del cliente es obligatorio";
-        }
+    //     if(!$this->CE_APELLIDO){
+    //         self::$alertas['error'][] = "El apellido del cliente es obligatorio";
+    //     }
 
-        if(!$this->CE_RAZONS){
-            self::$alertas['error'][] = "La razon social del cliente es obligatorio";
-        }
+    //     if(!$this->CE_RAZONS){
+    //         self::$alertas['error'][] = "La razon social del cliente es obligatorio";
+    //     }
 
-        if(!$this->CE_RUCIC){
-            self::$alertas['error'][] = "El RUC o CI del cliente es obligatorio";
-        }
+    //     if(!$this->CE_RUCIC){
+    //         self::$alertas['error'][] = "El RUC o CI del cliente es obligatorio";
+    //     }
 
-        if(!$this->CE_NOMREP){
-            self::$alertas['error'][] = "El nombre del representante del cliente es obligatorio";
-        }
+    //     if(!$this->CE_NOMREP){
+    //         self::$alertas['error'][] = "El nombre del representante del cliente es obligatorio";
+    //     }
 
-        if(!$this->CE_APEREP){
-            self::$alertas['error'][] = "El apellido del representante del cliente es obligatorio";
-        }
+    //     if(!$this->CE_APEREP){
+    //         self::$alertas['error'][] = "El apellido del representante del cliente es obligatorio";
+    //     }
 
-        if(!$this->CE_CADOM1){
-            self::$alertas['error'][] = "La direccion del cliente es obligatorio";
-        }
+    //     if(!$this->CE_CADOM1){
+    //         self::$alertas['error'][] = "La direccion del cliente es obligatorio";
+    //     }
 
-        if(!$this->CE_CADOM2){
-            self::$alertas['error'][] = "La direccion del cliente es obligatorio";
-        }
+    //     if(!$this->CE_CADOM2){
+    //         self::$alertas['error'][] = "La direccion del cliente es obligatorio";
+    //     }
 
-        if(!$this->CE_SECDOM){
-            self::$alertas['error'][] = "La direccion del cliente es obligatorio";
-        }
+    //     if(!$this->CE_SECDOM){
+    //         self::$alertas['error'][] = "La direccion del cliente es obligatorio";
+    //     }
 
-        if(!$this->CE_CAOFI1){
-            self::$alertas['error'][] = "La direccion del cliente es obligatorio";
-        }
+    //     if(!$this->CE_CAOFI1){
+    //         self::$alertas['error'][] = "La direccion del cliente es obligatorio";
+    //     }
 
-        if(!$this->CE_CAOF2){
-            self::$alertas['error'][] = "La direccion del cliente es obligatorio";
-        }
+    //     if(!$this->CE_CAOF2){
+    //         self::$alertas['error'][] = "La direccion del cliente es obligatorio";
+    //     }
 
-        if(!$this->CE_SECOFI){
-            self::$alertas['error'][] = "La direccion del cliente es obligatorio";
-        }
+    //     if(!$this->CE_SECOFI){
+    //         self::$alertas['error'][] = "La direccion del cliente es obligatorio";
+    //     }
 
-        if(!$this->CE_CAENT1){
-            self::$alertas['error'][] = "La direccion del cliente es obligatorio";
-        }
+    //     if(!$this->CE_CAENT1){
+    //         self::$alertas['error'][] = "La direccion del cliente es obligatorio";
+    //     }
 
-        if(!$this->CE_CAENT2){
-            self::$alertas['error'][] = "La direccion del cliente es obligatorio";
-        }
+    //     if(!$this->CE_CAENT2){
+    //         self::$alertas['error'][] = "La direccion del cliente es obligatorio";
+    //     }
 
-        if(!$this->CE_SECENT){
-            self::$alertas['error'][] = "La direccion del cliente es obligatorio";
-        }
+    //     if(!$this->CE_SECENT){
+    //         self::$alertas['error'][] = "La direccion del cliente es obligatorio";
+    //     }
 
-        if(!$this->CE_TELDOM){
-            self::$alertas['error'][] = "El telefono del cliente es obligatorio";
-        }
+    //     if(!$this->CE_TELDOM){
+    //         self::$alertas['error'][] = "El telefono del cliente es obligatorio";
+    //     }
 
-        if(!$this->CE_TELOFI){
-            self::$alertas['error'][] = "El telefono del cliente es obligatorio";
-        }
+    //     if(!$this->CE_TELOFI){
+    //         self::$alertas['error'][] = "El telefono del cliente es obligatorio";
+    //     }
 
-        if(!$this->CE_TELBOD){
-            self::$alertas['error'][] = "El telefono del cliente es obligatorio";
-        }
+    //     if(!$this->CE_TELBOD){
+    //         self::$alertas['error'][] = "El telefono del cliente es obligatorio";
+    //     }
 
-        if(!$this->CE_EMAIL){
-            self::$alertas['error'][] = "El email del cliente es obligatorio";
-        }
+    //     if(!$this->CE_EMAIL){
+    //         self::$alertas['error'][] = "El email del cliente es obligatorio";
+    //     }
 
-        return self::$alertas;
-    }
-
-
+    //     return self::$alertas;
+    // }
 
 
-    public function validarCheckTerminosCondiciones()
-    {
-        if(!$this->terminos){
-            self::$alertas['error'][] = "Debe aceptar los terminos y condiciones";
-        }
+    // public function validarCheckTerminosCondiciones()
+    // {
+    //     if(!$this->terminos){
+    //         self::$alertas['error'][] = "Debe aceptar los terminos y condiciones";
+    //     }
 
-        return self::$alertas;
-    }
+    //     return self::$alertas;
+    // }
 
 }

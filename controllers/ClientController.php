@@ -111,7 +111,7 @@ class ClientController{
                 'CE_SECENT' => 'SECTOR ENTREGA',
                 'CE_TELDOM' => 'TELEFONO DOMICILIO',
                 'CE_TELOFI' => 'TELEFONO OFICINA',
-                'CE_TELBOD' => 'TTELEFONO BODEGA',
+                'CE_TELBOD' => 'TELEFONO BODEGA',
                 'CE_FAX' => 'FAX',
                 'CE_EMAIL' => 'EMAIL',
                 'FECHA' => 'FECHA',

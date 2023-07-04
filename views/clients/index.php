@@ -79,13 +79,13 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="mb-3">
-                                        <label for="CE_NOMREP" class="form-label fw-bold">CE_NOMREP: </label>
+                                        <label for="CE_NOMREP" class="form-label fw-bold">NOMBRE REPRESENTANTE: </label>
                                         <input type="text" class="form-control" id="CE_NOMREP" name = "CE_NOMREP" required>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="mb-3">
-                                    <label for="CE_APEREP" class="form-label fw-bold">CE_APEREP: </label>
+                                    <label for="CE_APEREP" class="form-label fw-bold">APELLIDO REPRESENTANTE: </label>
                                     <input type="text" class="form-control" id="CE_APEREP" name = "CE_APEREP" required>
                                     </div>
                                 </div>
@@ -94,13 +94,13 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="mb-3">
-                                        <label for="CE_CADOM1" class="form-label fw-bold">CE_CADOM1: </label>
+                                        <label for="CE_CADOM1" class="form-label fw-bold">CALLE DOMICILIO 1: </label>
                                         <input type="text" class="form-control" id="CE_CADOM1" name ="CE_CADOM1" required>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="mb-3">
-                                        <label for="CE_CADOM2" class="form-label fw-bold">CE_CADOM2: </label>
+                                        <label for="CE_CADOM2" class="form-label fw-bold">CALLE DOMICILIO 2: </label>
                                         <input type="text" class="form-control" id="CE_CADOM2" name = "CE_CADOM2" required>
                                     </div>
                                 </div>
@@ -109,13 +109,13 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="mb-3">
-                                        <label for="CE_SECDOM" class="form-label fw-bold">CE_SECDOM: </label>
+                                        <label for="CE_SECDOM" class="form-label fw-bold">SECTOR DOMICILIO: </label>
                                         <input type="text" class="form-control" id="CE_SECDOM" name = "CE_SECDOM" required>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="mb-3">
-                                        <label for="CE_CAOFI1" class="form-label fw-bold">CE_CAOFI1: </label>
+                                        <label for="CE_CAOFI1" class="form-label fw-bold">CALLE OFICINA 1: </label>
                                         <input type="text" class="form-control" id="CE_CAOFI1" name = "CE_CAOFI1" required>
                                     </div>
                                 </div>
@@ -124,13 +124,13 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="mb-3">
-                                        <label for="CE_CAOF2" class="form-label fw-bold">CE_CAOF2: </label>
+                                        <label for="CE_CAOF2" class="form-label fw-bold">CALLE OFICINA 2: </label>
                                         <input type="text" class="form-control" id="CE_CAOF2" name = "CE_CAOF2" required>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="mb-3">
-                                        <label for="CE_SECOFI" class="form-label fw-bold">CE_SECOFI: </label>
+                                        <label for="CE_SECOFI" class="form-label fw-bold">SECTOR OFICINA: </label>
                                         <input type="text" class="form-control" id="CE_SECOFI" name = "CE_SECOFI" required>
                                     </div>
                                 </div>
@@ -139,13 +139,13 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="mb-3">
-                                        <label for="CE_CAENT1" class="form-label fw-bold">CE_CAENT1: </label>
+                                        <label for="CE_CAENT1" class="form-label fw-bold">CALLE ENTREGA 1: </label>
                                         <input type="text" class="form-control" id="CE_CAENT1" name = "CE_CAENT1" required>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="mb-3">
-                                        <label for="CE_CAENT2" class="form-label fw-bold">CE_CAENT2: </label>
+                                        <label for="CE_CAENT2" class="form-label fw-bold">CALLE ENTREGA 2: </label>
                                         <input type="text" class="form-control" id="CE_CAENT2" name = "CE_CAENT2" required>
                                     </div>
                                 </div>
@@ -154,13 +154,13 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="mb-3">
-                                        <label for="CE_SECENT" class="form-label fw-bold">CE_SECENT: </label>
+                                        <label for="CE_SECENT" class="form-label fw-bold">SECTOR ENTREGA: </label>
                                         <input type="text" class="form-control" id="CE_SECENT" name = "CE_SECENT" required>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="mb-3">
-                                        <label for="CE_TELDOM" class="form-label fw-bold">CE_TELDOM: </label>
+                                        <label for="CE_TELDOM" class="form-label fw-bold">TELEFONO DOMICILIO: </label>
                                         <input type="number" class="form-control" id="CE_TELDOM" name = "CE_TELDOM" required>
                                     </div>
                                 </div>
@@ -169,13 +169,13 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="mb-3">
-                                        <label for="CE_TELOFI" class="form-label fw-bold">CE_TELOFI: </label>
+                                        <label for="CE_TELOFI" class="form-label fw-bold">TELEFONO OFICINA: </label>
                                         <input type="number" class="form-control" id="CE_TELOFI" name = "CE_TELOFI" required>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="mb-3">
-                                        <label for="CE_TELBOD" class="form-label fw-bold">CE_TELBOD: </label>
+                                        <label for="CE_TELBOD" class="form-label fw-bold">TELEFONO BODEGA: </label>
                                         <input type="number" class="form-control" id="CE_TELBOD" name = "CE_TELBOD" required>
                                     </div>
                                 </div>
@@ -184,13 +184,13 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="mb-3">
-                                        <label for="CE_FAX" class="form-label fw-bold">CE_FAX: </label>
+                                        <label for="CE_FAX" class="form-label fw-bold">FAX: </label>
                                         <input type="number" class="form-control" id="CE_FAX" name = "CE_FAX" required>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="mb-3">
-                                        <label for="CE_EMAIL" class="form-label fw-bold">CE_EMAIL: </label>
+                                        <label for="CE_EMAIL" class="form-label fw-bold">EMAIL: </label>
                                         <input type="email" class="form-control" id="CE_EMAIL" name = "CE_EMAIL" required>
                                     </div>
                                 </div>
