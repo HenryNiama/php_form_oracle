@@ -17,7 +17,7 @@ if (!$conn) {
     $e = oci_error();
     trigger_error(htmlentities($e['message'], ENT_QUOTES), E_USER_ERROR);
 }else{
-    echo "Conexion exitosa";
+    // echo "Conexion exitosa.\n";
 }
 /*
 $stid = oci_parse($conn, 'SELECT * FROM employees');

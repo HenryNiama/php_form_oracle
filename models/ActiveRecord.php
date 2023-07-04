@@ -54,6 +54,25 @@ class ActiveRecord {
         return array_shift( $resultado ) ;
     }
 
+    public static function buscarPorCedula($cedula)
+    {
+        $consulta = "SELECT * FROM " . static::$tabla . " WHERE CE_RUCIC = :cedula";
+        $statement = oci_parse(self::$db, $consulta);
+        oci_bind_by_name($statement, ":cedula", $cedula);
+        oci_execute($statement);
+
+        $resultado = oci_fetch_assoc($statement);
+
+        if ($resultado) {
+            return new Cliente($resultado);
+        } else {
+            return null;
+        }
+    }
+
+
+
+
     // Obtener Registro
     public static function get($limite) {
         $query = "SELECT * FROM " . static::$tabla . " LIMIT ${limite}";
