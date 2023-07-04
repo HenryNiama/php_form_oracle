@@ -24,3 +24,7 @@
     }
 
 }
+
+.form-control:invalid {
+    border-color: rgb(163, 58, 58) !important;
+}

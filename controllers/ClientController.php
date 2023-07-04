@@ -77,18 +77,56 @@ class ClientController{
 
     public static function saveInExcel($postData)
     {
-
-
         $datos = $postData;
 
-        // Crear un nuevo objeto de tipo Spreadsheet
-        $spreadsheet = new Spreadsheet();
+        //Ruta y nombre del archivo
+        $filePath = 'C:\Users\cajero\OneDrive - Pintulac\Escritorio\Datos del Cliente.xlsx';
 
-        // Obtener la hoja activa
-        $sheet = $spreadsheet->getActiveSheet();
+        //Verificar si el archivo existe:
+        if(file_exists($filePath)){
+            //Abrir el archivo
+            $spreadsheet = \PhpOffice\PhpSpreadsheet\IOFactory::load($filePath);
+            $sheet = $spreadsheet->getActiveSheet();
+        }else{
+            // Crear un nuevo objeto de tipo Spreadsheet
+            $spreadsheet = new Spreadsheet();
+            $sheet = $spreadsheet->getActiveSheet();
+            $sheet->setTitle('Datos del Cliente');
+            // Establecer los títulos de las columnas en la primera fila
+            $titulosColumnas = [
+                'CE_NOMBRE' => 'NOMBRE',
+                'CE_APELLI' => 'APELLIDO',
+                'CE_RAZONS' => 'RAZÓN SOCIAL',
+                'CE_RUCIC' => 'CÉDULA/RUC',
+                'CE_NOMREP' => 'NOMBRE REPRESENTANTE',
+                'CE_APEREP' => 'APELLIDO REPRESENTANTE',
+                'CE_CADOM1' => 'CALLE DOMICILIO 1',
+                'CE_CADOM2' => 'CALLE DOMICILIO 2',
+                'CE_SECDOM' => 'SECTOR DOMICILIO',
+                'CE_CAOFI1' => 'CALLE OFICINA 1',
+                'CE_CAOF2' => 'CALLE OFICINA 2',
+                'CE_SECOFI' => 'SECTOR OFICINA',
+                'CE_CAENT1' => 'CALLE ENTREGA 1',
+                'CE_CAENT2' => 'CALLE ENTREGA 2',
+                'CE_SECENT' => 'SECTOR ENTREGA',
+                'CE_TELDOM' => 'TELEFONO DOMICILIO',
+                'CE_TELOFI' => 'TELEFONO OFICINA',
+                'CE_TELBOD' => 'TTELEFONO BODEGA',
+                'CE_FAX' => 'FAX',
+                'CE_EMAIL' => 'EMAIL',
+                'FECHA' => 'FECHA',
+            ];
 
-        $sheet->setTitle('Datos del Cliente');
+            foreach ($titulosColumnas as $columna => $titulo) {
+                $columnIndex = array_search($columna, array_keys($titulosColumnas)) + 1;
+                $sheet->setCellValueByColumnAndRow($columnIndex, 1, $titulo);
+            }
+        }
 
+        //Obtener la ultima fila ocupada
+        $lastRow = $sheet->getHighestRow() + 1;
+
+        $fecha = date('d/m/Y');
         // Crear un array con los datos del cliente
         $datosCliente = [
             'CE_NOMBRE' => $datos['CE_NOMBRE'],
@@ -111,42 +149,14 @@ class ClientController{
             'CE_TELBOD' => $datos['CE_TELBOD'],
             'CE_FAX' => $datos['CE_FAX'],
             'CE_EMAIL' => $datos['CE_EMAIL'],
+            'FECHA' => $fecha,
         ];
 
-        // Crear un array con los titulos de las columnas
-        $titulosColumnas = [
-            'CE_NOMBRE' => 'Nombre',
-            'CE_APELLI' => 'Apellido',
-            'CE_RAZONS' => 'Razon Social',
-            'CE_RUCIC' => 'Cedula/RUC',
-            'CE_NOMREP' => 'Nombre Representante',
-            'CE_APEREP' => 'Apellido Representante',
-            'CE_CADOM1' => 'Calle Domicilio 1',
-            'CE_CADOM2' => 'Calle Domicilio 2',
-            'CE_SECDOM' => 'Sector Domicilio',
-            'CE_CAOFI1' => 'Calle Oficina 1',
-            'CE_CAOF2' => 'Calle Oficina 2',
-            'CE_SECOFI' => 'Sector Oficina',
-            'CE_CAENT1' => 'Calle Entrega 1',
-            'CE_CAENT2' => 'Calle Entrega 2',
-            'CE_SECENT' => 'Sector Entrega',
-            'CE_TELDOM' => 'Telefono Domicilio',
-            'CE_TELOFI' => 'Telefono Oficina',
-            'CE_TELBOD' => 'Telefono Bodega',
-            'CE_FAX' => 'Fax',
-            'CE_EMAIL' => 'Email',
-        ];
 
-        // Establecer los títulos de las columnas en la primera fila
-        foreach($titulosColumnas as $key => $titulo) {
-            $columna = array_search($key, array_keys($titulosColumnas)) + 1; // Obtener el número de columna
-            $sheet->setCellValueByColumnAndRow($columna, 1, $titulo);
-        }
-
-        // Establecer los datos del cliente en la segunda fila
-        foreach($datosCliente as $key => $dato) {
+        // Establecer los datos del cliente en la siguiente fila disponible
+        foreach ($datosCliente as $key => $dato) {
             $columna = array_search($key, array_keys($datosCliente)) + 1; // Obtener el número de columna
-            $sheet->setCellValueByColumnAndRow($columna, 2, $dato);
+            $sheet->setCellValueByColumnAndRow($columna, $lastRow, $dato);
         }
 
         // Crear un nuevo objeto de tipo Xlsx
@@ -160,9 +170,7 @@ class ClientController{
 
         header('Cache-Control: max-age=0');
 
-        $filePath = 'C:\Users\cajero\OneDrive - Pintulac\Escritorio\Datos del Cliente.xlsx';
         $writer->save($filePath);
-
 
         // Finalizar la ejecución del script
         exit;
