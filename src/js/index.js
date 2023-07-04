@@ -48,14 +48,16 @@ function validarCedulaRUC() {
   const CE_RUCIC = document.getElementById("CE_RUCIC_CEDULA_PASSPORT").value;
 
   if (!CE_RUCIC) {
-    alert("El RUC o Cédula es obligatorio.");
+    // alert("El RUC o Cédula es obligatorio.");
+    Swal.fire("Error", "El RUC o Cédula es obligatorio.", "error");
     return false;
   }
 
   const longitud = CE_RUCIC.length;
 
   if (longitud !== 10 && longitud !== 13) {
-    alert("El RUC o Cédula debe tener 10 o 13 dígitos.");
+    // alert("El RUC o Cédula debe tener 10 o 13 dígitos.");
+    Swal.fire("Error", "El RUC o Cédula debe tener 10 o 13 dígitos.", "error");
     return false;
   }
 
@@ -216,17 +218,42 @@ guardarBtn.addEventListener('click', () => {
   ) {
     // Si algún campo está vacío o el checkbox no está marcado, mostramos un SweetAlert2 de error
     Swal.fire('Error', 'Por favor, completa todos los campos y acepta los términos y condiciones', 'error');
-    return; // Detenemos la ejecución si hay campos vacíos o el checkbox no está marcado
+    return; // Detenemos la ejecución si hay campos vacíos o el checkbox no está marcado.
+  }else{
+    // Si todos los campos están llenos y el checkbox está marcado, podemos proceder a guardar los datos
+    // Aquí puedes agregar tu lógica de guardado, ya sea usando AJAX o cualquier otra forma
+    const formularioActualizado = document.getElementById("formularioActualizado");
+
+    // const formData = new FormData(formularioActualizado);
+    const formData = new URLSearchParams(new FormData(formularioActualizado));
+
+    fetch("/", {
+      method: "POST",
+      body: formData,
+    })
+      .then((response) => response.text())
+      .then((data) => {
+        console.log(data);
+        Swal.fire({
+          title: "Datos actualizados correctamente",
+          text: "Se actualizaron los datos correctamente",
+          icon: "success",
+          didClose: () => {
+            window.location.href = "/";
+          }
+        });
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   }
-
-  // Si todos los campos están llenos y el checkbox está marcado, podemos proceder a guardar los datos
-  // Aquí puedes agregar tu lógica de guardado, ya sea usando AJAX o cualquier otra forma
-
-  // Mostramos un SweetAlert2 de éxito
-  Swal.fire('Éxito', 'Los datos se han guardado exitosamente', 'success')
-    .then(() => {
-      // Redireccionamos a la página principal
-      window.location.href = '/';
-    });
 });
+
+const formularioActualizado = document.getElementById("formularioActualizado");
+formularioActualizado.addEventListener("submit", function (e) {
+  e.preventDefault();
+  console.log("Enviando formulario...");
+});
+
+
 

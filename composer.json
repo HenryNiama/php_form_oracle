@@ -8,5 +8,8 @@
             "Controllers\\" : "./controllers",
             "Model\\" : "./models"
         }
+    },
+    "require": {
+        "phpoffice/phpspreadsheet": "^1.29"
     }
 }
